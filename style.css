@@ -1,0 +1,85 @@
+body{
+    font-family: 'Inconsolata', monospace;
+    background-color: #056162;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
+.left_container{
+    width: 30%;
+    background-color: #1e2428;
+    height: 100vh;
+}
+.top_section{
+    background-color: #2a2f32;
+}
+/* immagine profilo utente e impostazioni */
+.user_pro_pic{
+    width: 40px;
+    display: inline-block;
+}
+.user_pro_pic img{
+    height: 40px;
+    width: 100%;
+    margin: 5px 10px;
+    object-fit: contain;
+    opacity: .85;
+}
+.settings_stories{
+    margin: auto;
+    color: white;
+    float: right;
+}
+.settings_stories i{
+    font-size: 25px;
+    margin-top: 15px;
+    margin-right: 15px;
+    opacity: .5;
+}
+.settings_stories i, .user_pro_pic img:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+/* barra di ricerca */
+.search_section{
+    background-color: #2a2f32;
+    padding: 20px;
+    border: 1px solid grey;
+}
+.chat_search{
+    width: 100%;
+    height: 25px;
+    cursor: pointer;
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+/* elenco chat */
+.chat_element{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2a2f32;
+    border-bottom: 1px solid grey;
+}
+.chat_pro_pic img{
+    width: 40px;
+    object-fit: contain;
+}
+.chat_infos{
+    margin-left: 10px;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
