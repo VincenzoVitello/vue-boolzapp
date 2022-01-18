@@ -1,6 +1,13 @@
 body{
     font-family: 'Inconsolata', monospace;
-    background-color: #056162;
+
+}
+.container{
+    display: flex;
+}
+.right_container{
+    background-color: gray;
+    width: 75%;
 }
 *{
     box-sizing: border-box;
@@ -8,18 +15,14 @@ body{
     padding: 0;
 }
 
-.container{
-    width: 90%;
-    height: 80%;
-    margin: auto;
-}
 .left_container{
-    width: 30%;
+    width: 25%;
     background-color: #1e2428;
     height: 100vh;
 }
 .top_section{
     background-color: #2a2f32;
+    height: 50px;
 }
 /* immagine profilo utente e impostazioni */
 .user_pro_pic{
@@ -56,12 +59,13 @@ body{
 }
 .chat_search{
     width: 100%;
-    height: 25px;
+    height: 20px;
     cursor: pointer;
     background-color: lightgray;
     border: 1px solid black;
-    border-radius: 15px;
-    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    outline: none;
 }
 /* elenco chat */
 .chat_element{
@@ -82,4 +86,76 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+/* parte superiore della chat */
+.top_chat_section{
+    display: flex;
+    justify-content: space-between;
+    background-color: #2a2f32;
+    border-left: 1px solid grey;
+    height: 50px;
+}
+.chat_pro_pic_dx img{
+    margin: 5px;
+    width: 40px;
+    object-fit: contain;
+}
+.top_chat_left{
+    display: flex;
+}
+.top_chat_right{
+    display: flex;
+    align-items: center;
+}
+.top_chat_right i{
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+.top_chat_right i:hover{
+    cursor: pointer;
+}
+.ms_separator{
+    border-right: 1px solid grey;
+}
+/* parte centrale, dove viene mostrata la chat */
+.current_chat{
+    height: calc(100vh - 100px);
+    width: 100%;
+    background-image: url(chat-wallpaper.png);
+}
+/* parte di inserimento testo */
+.text_section{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2f32
+}
+.insert_text{
+    width: 80%;
+}
+.input_text{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    background-color: lightgray;
+    padding: 20px;
+    border: 1px solid black;
+}
+.emoji_attach{
+    padding-left: 20px;
+}
+.audio_message{
+    padding-right: 20px;
+}
+.emoji_attach i, .audio_message i{
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+} 
+.emoji_attach i, .audio_message i:hover{
+    cursor: pointer;
 }
