@@ -8,7 +8,6 @@ var app = new Vue({
             {
             name: 'Michele',
             avatar: 'https://unsplash.it/50/50?image=11',
-            visible: true,
             messages: [
                     {
                     date: '10/01/2020 15:30:55',
@@ -30,7 +29,6 @@ var app = new Vue({
             {
             name: 'Fabio',
             avatar: 'https://unsplash.it/50/50?image=15',
-            visible: true,
             messages: [
                     {
                     date: '20/03/2020 16:30:00',
@@ -52,7 +50,6 @@ var app = new Vue({
             {
             name: 'Massimo',
             avatar: 'https://unsplash.it/50/50?image=13',
-            visible: true,
             messages: [
                     {
                     date: '28/03/2020 10:10:40',
@@ -74,7 +71,6 @@ var app = new Vue({
             {
             name: 'Luiso',
             avatar: 'https://unsplash.it/50/50?image=16',
-            visible: true,
             messages: [
                     {
                     date: '10/01/2020 15:30:55',
