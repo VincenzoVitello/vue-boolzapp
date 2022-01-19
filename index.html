@@ -12,14 +12,14 @@
     <title>Boolzapp</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <!--parte sinistra app-->
 
         <div class="left_container"> <!--container di sinistra-->
             <!--parte alta con immagine del profilo, storie, chat e impostazioni-->
             <div class="top_section"> 
                 <div class="user_pro_pic">
-                    <img src="User-logo.png" alt="">
+                    <img src="https://unsplash.it/50/50?image=1" alt="">
                 </div>
                 <div class="settings_stories">
                     <i class="fa-solid fa-message"></i>
@@ -34,49 +34,13 @@
 
             <!--archivio chat-->
             <div class="chat_section"> 
-                <div class="chat_element">
+                <div v-for="(user, index) in contacts" @click="dataIndex = index" class="chat_element">
                     <div class="chat_pro_pic">
-                        <img src="User-logo.png" alt="">
+                        <img :src="user.avatar" alt="">
                     </div>
                     <div class="chat_infos">
-                        <h3>Bob</h3>
-                        <span class="last_enter">15:03</span>
-                    </div>
-                </div>
-                <div class="chat_element">
-                    <div class="chat_pro_pic">
-                        <img src="User-logo.png" alt="">
-                    </div>
-                    <div class="chat_infos">
-                        <h3>Bob</h3>
-                        <span class="last_enter">15:03</span>
-                    </div>
-                </div>
-                <div class="chat_element">
-                    <div class="chat_pro_pic">
-                        <img src="User-logo.png" alt="">
-                    </div>
-                    <div class="chat_infos">
-                        <h3>Bob</h3>
-                        <span class="last_enter">15:03</span>
-                    </div>
-                </div>
-                <div class="chat_element">
-                    <div class="chat_pro_pic">
-                        <img src="User-logo.png" alt="">
-                    </div>
-                    <div class="chat_infos">
-                        <h3>Bob</h3>
-                        <span class="last_enter">15:03</span>
-                    </div>
-                </div>
-                <div class="chat_element">
-                    <div class="chat_pro_pic">
-                        <img src="User-logo.png" alt="">
-                    </div>
-                    <div class="chat_infos">
-                        <h3>Bob</h3>
-                        <span class="last_enter">15:03</span>
+                        <h3>{{ user.name }}</h3>
+                        <span class="last_enter">{{  }}</span>
                     </div>
                 </div>
             </div>
@@ -104,7 +68,11 @@
             </div>
             <!-- parte in cui viene mostrata la chat -->
             <div class="current_chat">
-
+                
+                    <div :class="`${contacts[dataIndex].messages[index].status}_message`" v-for="(chatElement, index) in contacts[dataIndex].messages">
+                        {{ chatElement.text }}
+                    </div>
+                
             </div>
             <!-- parte bassa della chat, dove si scrive -->
             <div class="text_section">
@@ -121,5 +89,8 @@
             </div>
         </div>
     </div>
+    <!-- inclusione js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
