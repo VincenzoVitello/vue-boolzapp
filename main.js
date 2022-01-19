@@ -104,7 +104,7 @@ var app = new Vue({
                 this.contacts[this.dataIndex].messages.push({
                 
                     date: '',
-                    text: 'Puppa',
+                    text: 'Okay!',
                     status: 'received',
                     
             });
