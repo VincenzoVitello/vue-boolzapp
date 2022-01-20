@@ -102,36 +102,47 @@ var app = new Vue({
     }, 
     methods: {
         addAndClean: function(){
-            this.contacts[this.dataIndex].messages.push({
-                
-                    
-                    text: this.inputValue,
-                    status: 'sent',
-                    
-            });
-            this.inputValue = "";
-            setTimeout(() => {
-                this.contacts[this.dataIndex].messages.push({
-                
-                    date: '',
-                    text: 'vab',
-                    status: 'received',
-                    
-            });
-            }, 1000);
+            if(this.inputValue = null){
+            this.sendMessage()
+            }else{
+            this.emptyMessage()
+            }
         },
+
         verifyName: function(){
             for (let index = 0; index < this.contacts.length; index++) {
                 const element = this.contacts[index];
-                console.log(element.name)
-                const testo = element.name.toLowerCase();
                 if(!element.name.toLowerCase().includes(this.nameComponent.toLowerCase())){
-                    element.visible = false; console.log('sì')
+                    element.visible = false; 
                 }else{
-                    element.visible = true; console.log('no')
-                }
-                
+                    element.visible = true; 
+                } 
             }
         },
+
+        sendMessage: function(){
+            this.contacts[this.dataIndex].messages.push({
+                            
+            text: this.inputValue,
+            status: 'sent',
+            
+            });
+
+            this.inputValue = "";
+            setTimeout(() => {
+            this.contacts[this.dataIndex].messages.push({
+            
+                date: '',
+                text: 'vab',
+                status: 'received',
+                
+            });
+            }, 1000)
+        },
+
+        emptyMessage: function(){
+            alert('Il messaggio che stai tentando di inviare non contiente testo! Verrai, pertanto, punito con la morte.')
+        },
+        
     }
 })

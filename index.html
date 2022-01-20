@@ -71,9 +71,8 @@
             <!-- parte in cui viene mostrata la chat -->
             <div class="current_chat">
                 
-                    <div :class="`${contacts[dataIndex].messages[index].status}_message`"  @mouseover="showDeleteArrow" v-for="(chatElement, index) in contacts[dataIndex].messages">
+                    <div :class="`${contacts[dataIndex].messages[index].status}_message`"  v-for="(chatElement, index) in contacts[dataIndex].messages">
                         {{ chatElement.text }}
-                        <div class="delete_msg"><i class="fas fa-chevron-down"></i></div>
                     </div>
                 
             </div>

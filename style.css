@@ -214,10 +214,4 @@ body{
 .no_chat_selected img{
     width: 100%;
 }
-.delete_msg{
-    display: none;
-}
-.show_delete_arrow{
-    display: block;
-}
 
