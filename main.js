@@ -6,28 +6,28 @@ var app = new Vue({
 
         contacts: [
             {
-            name: 'Michele',
-            avatar: 'https://picsum.photos/536/354',
+            name: 'Stefan',
+            avatar: 'https://segre.to/a/shouts/44mQkPQ2Eny7jgnNwEk/vNa65RWyVrQKXgjJ7dJ_hq.jpg',
             messages: [
                     {
                     date: '10/01/2020 15:30:55',
-                    text: 'Hai portato a spasso il cane?',
+                    text: 'yo',
                     status: 'sent',
                     },
                     {
                     date: '10/01/2020 15:50:00',
-                    text: 'Ricordati di dargli da mangiare',
-                    status: 'sent',
+                    text: 'yo',
+                    status: 'received',
                     },
                     {
                     date: '10/01/2020 16:15:22',
-                    text: 'Tutto fatto!',
-                    status: 'received',
+                    text: 'Ricordati di darti da mangiare!',
+                    status: 'sent',
                     }
                 ],
             },
             {
-            name: 'Fabio',
+            name: 'Simone Bruno',
             avatar: 'https://picsum.photos/136/351',
             messages: [
                     {
@@ -48,22 +48,32 @@ var app = new Vue({
                 ],
             },
             {
-            name: 'Massimo',
-            avatar: 'https://picsum.photos/516/254',
+            name: 'Matteo Salvalaggio',
+            avatar: 'https://images.mubicdn.net/images/cast_member/34722/cache-613789-1606465093/image-w856.jpg?size=800x',
             messages: [
                     {
                     date: '28/03/2020 10:10:40',
-                    text: 'La Marianna va in campagna',
-                    status: 'received',
+                    text: 'Caccole',
+                    status: 'sent',
                     },
                     {
                     date: '28/03/2020 10:20:10',
-                    text: 'Sicuro di non aver sbagliato chat?',
-                    status: 'sent',
+                    text: 'AHAHAHAHAHAH 🤣',
+                    status: 'received',
                     },
                     {
                     date: '28/03/2020 16:15:22',
                     text: 'Ah scusa!',
+                    status: 'sent',
+                    },
+                    {
+                    date: '28/03/2020 16:15:22',
+                    text: 'puzzole',
+                    status: 'sent',
+                    },
+                    {
+                    date: '28/03/2020 16:15:22',
+                    text: '🤣🤣🤣',
                     status: 'received',
                     }
                 ],
@@ -100,7 +110,7 @@ var app = new Vue({
                 this.contacts[this.dataIndex].messages.push({
                 
                     date: '',
-                    text: 'Okay!',
+                    text: 'vab',
                     status: 'received',
                     
             });
