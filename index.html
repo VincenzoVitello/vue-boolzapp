@@ -25,13 +25,13 @@
             </div>
 
             <!--barra di ricerca-->
-            <div class="search_section"> 
-                <input type="text" placeholder="Cerca o inizia una nuova chat" class="chat_search">
+            <div class="search_section">  
+                <input v-model="nameComponent" type="text" placeholder="Cerca o inizia una nuova chat" @keyup="verifyName" class="chat_search">
             </div>
 
             <!--archivio chat-->
             <div class="chat_section"> 
-                <div v-for="(user, index) in contacts" @click="dataIndex = index" class="chat_element">
+                <div v-for="(user, index) in contacts" @click="dataIndex = index" class="chat_element" :class="user.visible ? 'show' : 'hide' ">
                     <div class="chat_pro_pic">
                         <img :src="user.avatar" alt="">
                     </div>
@@ -45,7 +45,10 @@
         </div>
 
         <!-- container di destra, chat aperta -->
-        <div class="right_container"> 
+        <div class="no_chat_selected" v-if="dataIndex == null">
+            <img src="no-chat-selected.png" alt="">
+        </div>
+        <div v-else class="right_container"> 
 
         <!-- parte alta della chat, con nome utente e impostazioni -->
             <div class="top_chat_section">
@@ -55,7 +58,7 @@
                     </div>
                     <div class="chat_infos">
                         <h3>{{ contacts[dataIndex].name }}</h3>
-                        <p class="last_enter_rigth">{{ contacts[dataIndex].messages.at(-1).date }}</p>
+                        <p class="last_enter_rigth">Ultimo accesso: {{ contacts[dataIndex].messages.at(-1).date }}</p>
                     </div>
                 </div>
                 <div class="top_chat_right">
@@ -68,8 +71,9 @@
             <!-- parte in cui viene mostrata la chat -->
             <div class="current_chat">
                 
-                    <div :class="`${contacts[dataIndex].messages[index].status}_message`" v-for="(chatElement, index) in contacts[dataIndex].messages">
+                    <div :class="`${contacts[dataIndex].messages[index].status}_message`"  @mouseover="showDeleteArrow" v-for="(chatElement, index) in contacts[dataIndex].messages">
                         {{ chatElement.text }}
+                        <div class="delete_msg"><i class="fas fa-chevron-down"></i></div>
                     </div>
                 
             </div>

@@ -1,12 +1,13 @@
 var app = new Vue({
     el: '#app',
     data: {     //dati
-        dataIndex: 0,
+        dataIndex: null,
         inputValue: '',
-
+        nameComponent: '',//variabile a cui assegnare il valore dell'input nel search
         contacts: [
             {
             name: 'Stefan',
+            visible: true, 
             avatar: 'https://segre.to/a/shouts/44mQkPQ2Eny7jgnNwEk/vNa65RWyVrQKXgjJ7dJ_hq.jpg',
             messages: [
                     {
@@ -28,6 +29,7 @@ var app = new Vue({
             },
             {
             name: 'Simone Bruno',
+            visible: true,
             avatar: 'https://picsum.photos/136/351',
             messages: [
                     {
@@ -49,6 +51,7 @@ var app = new Vue({
             },
             {
             name: 'Matteo Salvalaggio',
+            visible: true,
             avatar: 'https://images.mubicdn.net/images/cast_member/34722/cache-613789-1606465093/image-w856.jpg?size=800x',
             messages: [
                     {
@@ -80,6 +83,7 @@ var app = new Vue({
             },
             {
             name: 'Luiso',
+            visible: true,
             avatar: 'https://picsum.photos/532/334',
             messages: [
                     {
@@ -115,6 +119,19 @@ var app = new Vue({
                     
             });
             }, 1000);
-        }
+        },
+        verifyName: function(){
+            for (let index = 0; index < this.contacts.length; index++) {
+                const element = this.contacts[index];
+                console.log(element.name)
+                const testo = element.name.toLowerCase();
+                if(!element.name.toLowerCase().includes(this.nameComponent.toLowerCase())){
+                    element.visible = false; console.log('sì')
+                }else{
+                    element.visible = true; console.log('no')
+                }
+                
+            }
+        },
     }
 })

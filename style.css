@@ -202,3 +202,22 @@ body{
 .emoji_attach i, .audio_message i:hover{
     cursor: pointer;
 }
+.hide{
+    display: none;
+}
+.show{
+    display: flex;
+}
+.no_chat_selected{
+    width: 65%;
+}
+.no_chat_selected img{
+    width: 100%;
+}
+.delete_msg{
+    display: none;
+}
+.show_delete_arrow{
+    display: block;
+}
+
