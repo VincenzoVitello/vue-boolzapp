@@ -7,7 +7,7 @@ var app = new Vue({
         contacts: [
             {
             name: 'Michele',
-            avatar: 'https://unsplash.it/50/50?image=11',
+            avatar: 'https://picsum.photos/536/354',
             messages: [
                     {
                     date: '10/01/2020 15:30:55',
@@ -28,7 +28,7 @@ var app = new Vue({
             },
             {
             name: 'Fabio',
-            avatar: 'https://unsplash.it/50/50?image=15',
+            avatar: 'https://picsum.photos/136/351',
             messages: [
                     {
                     date: '20/03/2020 16:30:00',
@@ -49,7 +49,7 @@ var app = new Vue({
             },
             {
             name: 'Massimo',
-            avatar: 'https://unsplash.it/50/50?image=13',
+            avatar: 'https://picsum.photos/516/254',
             messages: [
                     {
                     date: '28/03/2020 10:10:40',
@@ -70,7 +70,7 @@ var app = new Vue({
             },
             {
             name: 'Luiso',
-            avatar: 'https://unsplash.it/50/50?image=16',
+            avatar: 'https://picsum.photos/532/334',
             messages: [
                     {
                     date: '10/01/2020 15:30:55',

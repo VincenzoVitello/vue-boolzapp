@@ -1,13 +1,14 @@
-body{
-    font-family: 'Inconsolata', monospace;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Roboto:wght@300&display=swap');
 
+body{
+    font-family: 'Raleway', sans-serif;
 }
 .container{
     display: flex;
 }
 .right_container{
     background-color: gray;
-    width: 75%;
+    width: 65%;
 }
 *{
     box-sizing: border-box;
@@ -16,7 +17,7 @@ body{
 }
 
 .left_container{
-    width: 25%;
+    width: 35%;
     background-color: #1e2428;
     height: 100vh;
 }
@@ -31,9 +32,9 @@ body{
 }
 .user_pro_pic img{
     height: 40px;
-    width: 100%;
+    width: 40px;
     margin: 5px 10px;
-    object-fit: contain;
+    object-fit: cover;
     opacity: .85;
     border-radius: 50%;
 }
@@ -86,11 +87,13 @@ body{
 }
 .chat_pro_pic img{
     width: 40px;
-    object-fit: contain;
+    height: 40px;
+    object-fit: cover;
     border-radius: 50%;
 }
 .chat_infos{
     margin-left: 10px;
+    margin-top: 5px;
     color: white;
     width: 100%;
     display: flex;
@@ -131,7 +134,8 @@ body{
 .chat_pro_pic_dx img{
     margin: 5px;
     width: 40px;
-    object-fit: contain;
+    height: 40px;
+    object-fit: cover;
     border-radius: 50%;
 }
 .last_enter_rigth{
@@ -161,7 +165,7 @@ body{
     height: calc(100vh - 100px);
     width: 100%;
     background-image: url(chat-wallpaper.png);
-    overflow: scroll;
+    overflow: auto;
 }
 /* parte di inserimento testo */
 .text_section{
