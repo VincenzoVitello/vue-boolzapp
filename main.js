@@ -101,13 +101,6 @@ var app = new Vue({
         ]           
     }, //chiusura data
         methods: {
-            addAndClean: function(){
-                if(this.inputValue = ''){
-                this.sendMessage()
-                }else{
-                this.emptyMessage()
-                }
-            },
 
             verifyName: function(){
                 for (let index = 0; index < this.contacts.length; index++) {
