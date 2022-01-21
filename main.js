@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {     //dati
         dataIndex: null,
-        inputValue: '',
+        inputValue: '', //variabile a cui assegno valore equivalente a ciò che scrivo nell'input della chat
         nameComponent: '',//variabile a cui assegnare il valore dell'input nel search
         contacts: [
             {
@@ -99,50 +99,50 @@ var app = new Vue({
                 ],
             },
         ]           
-    }, 
-    methods: {
-        addAndClean: function(){
-            if(this.inputValue = null){
-            this.sendMessage()
-            }else{
-            this.emptyMessage()
-            }
-        },
-
-        verifyName: function(){
-            for (let index = 0; index < this.contacts.length; index++) {
-                const element = this.contacts[index];
-                if(!element.name.toLowerCase().includes(this.nameComponent.toLowerCase())){
-                    element.visible = false; 
+    }, //chiusura data
+        methods: {
+            addAndClean: function(){
+                if(this.inputValue = ''){
+                this.sendMessage()
                 }else{
-                    element.visible = true; 
-                } 
-            }
-        },
+                this.emptyMessage()
+                }
+            },
 
-        sendMessage: function(){
-            this.contacts[this.dataIndex].messages.push({
-                            
-            text: this.inputValue,
-            status: 'sent',
-            
-            });
+            verifyName: function(){
+                for (let index = 0; index < this.contacts.length; index++) {
+                    const element = this.contacts[index];
+                    if(!element.name.toLowerCase().includes(this.nameComponent.toLowerCase())){
+                        element.visible = false; 
+                    }else{
+                        element.visible = true; 
+                    } 
+                }
+            },
 
-            this.inputValue = "";
-            setTimeout(() => {
-            this.contacts[this.dataIndex].messages.push({
-            
-                date: '',
-                text: 'vab',
-                status: 'received',
-                
-            });
-            }, 1000)
-        },
-
-        emptyMessage: function(){
-            alert('Il messaggio che stai tentando di inviare non contiente testo! Verrai, pertanto, punito con la morte.')
-        },
+            sendMessage: function(){
+            if(this.inputValue != ''){
+                    this.contacts[this.dataIndex].messages.push({
+                                
+                    text: this.inputValue,
+                    status: 'sent',
+                    
+                    });
         
-    }
-})
+                    this.inputValue = "";
+                    setTimeout(() => {
+                    this.contacts[this.dataIndex].messages.push({
+                    
+                        date: '',
+                        text: 'vab',
+                        status: 'received',
+                        
+                    });
+                    }, 1000)
+            }else{
+                alert('Il messaggio che stai tentando di inviare non contiente testo! Verrai, pertanto, punito con la morte.')
+            }
+            }//chiusura funzione sendMessage
+     
+    }//Chiusura methods
+}) //chiusura appVue
