@@ -107,11 +107,19 @@ body{
     display: flex;
     flex-direction: column;
 }
+.added_msg_date{
+    opacity: .7;
+    font-size: 12px;
+    margin-top: 5px;
+    align-self: flex-end;
+}
 .received_message, .sent_message{
     padding: 20px;
     width: inherit;
     margin: 20px;
     max-width: 30%;
+    display: flex;
+    flex-direction: column;
 }
 .received_message{
     background-color: white;

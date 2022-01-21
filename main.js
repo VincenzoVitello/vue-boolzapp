@@ -11,17 +11,17 @@ var app = new Vue({
             avatar: 'https://segre.to/a/shouts/44mQkPQ2Eny7jgnNwEk/vNa65RWyVrQKXgjJ7dJ_hq.jpg',
             messages: [
                     {
-                    date: '10/01/2020 15:30:55',
+                    date: '10/01/2020 15:30',
                     text: 'yo',
                     status: 'sent',
                     },
                     {
-                    date: '10/01/2020 15:50:00',
+                    date: '10/01/2020 15:50',
                     text: 'yo',
                     status: 'received',
                     },
                     {
-                    date: '10/01/2020 16:15:22',
+                    date: '10/01/2020 16:15',
                     text: 'Ricordati di darti da mangiare!',
                     status: 'sent',
                     }
@@ -33,17 +33,17 @@ var app = new Vue({
             avatar: 'https://picsum.photos/136/351',
             messages: [
                     {
-                    date: '20/03/2020 16:30:00',
+                    date: '20/03/2020 16:30',
                     text: 'Ciao come stai?',
                     status: 'sent',
                     },
                     {
-                    date: '20/03/2020 16:30:55',
+                    date: '20/03/2020 16:30',
                     text: 'Bene grazie! Stasera ci vediamo?',
                     status: 'received',
                     },
                     {
-                    date: '20/03/2020 16:35:00',
+                    date: '20/03/2020 16:35',
                     text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                     status: 'sent',
                     }
@@ -55,27 +55,27 @@ var app = new Vue({
             avatar: 'https://images.mubicdn.net/images/cast_member/34722/cache-613789-1606465093/image-w856.jpg?size=800x',
             messages: [
                     {
-                    date: '28/03/2020 10:10:40',
+                    date: '28/03/2020 10:10',
                     text: 'Caccole',
                     status: 'sent',
                     },
                     {
-                    date: '28/03/2020 10:20:10',
+                    date: '28/03/2020 10:20',
                     text: 'AHAHAHAHAHAH 🤣',
                     status: 'received',
                     },
                     {
-                    date: '28/03/2020 16:15:22',
+                    date: '28/03/2020 16:15',
                     text: 'Ah scusa!',
                     status: 'sent',
                     },
                     {
-                    date: '28/03/2020 16:15:22',
+                    date: '28/03/2020 16:15',
                     text: 'puzzole',
                     status: 'sent',
                     },
                     {
-                    date: '28/03/2020 16:15:22',
+                    date: '28/03/2020 16:15',
                     text: '🤣🤣🤣',
                     status: 'received',
                     }
@@ -87,12 +87,12 @@ var app = new Vue({
             avatar: 'https://picsum.photos/532/334',
             messages: [
                     {
-                    date: '10/01/2020 15:30:55',
+                    date: '10/01/2020 15:30',
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
                     status: 'sent',
                     },
                     {
-                    date: '10/01/2020 15:50:00',
+                    date: '10/01/2020 15:50',
                     text: 'Si, ma preferirei andare al cinema',
                     status: 'received',
                     }
@@ -100,6 +100,12 @@ var app = new Vue({
             },
         ]           
     }, //chiusura data
+    updated: function() {  //imposto lo scroll automatico, all'aggiornamento del dom
+        const chat = document.querySelector('.current_chat');
+        chat.scrollTop = chat.scrollHeight;
+        console.log(this.dataIndex)
+    },
+
         methods: {
 
             verifyName: function(){
@@ -112,26 +118,34 @@ var app = new Vue({
                     } 
                 }
             },
+            replyMessage: function(contactIndex){
+                this.contacts[contactIndex].messages.push({
+                    date: dayjs().format("DD/MM/YYYY HH:mm"),
+                    text: 'vab',
+                    status: 'received',
+                    
+                });
+                
+            },
 
             sendMessage: function(){
             if(this.inputValue != ''){
                     this.contacts[this.dataIndex].messages.push({
-                                
+                    date: dayjs().format("DD/MM/YYYY HH:mm"),           
                     text: this.inputValue,
                     status: 'sent',
                     
                     });
+                    
+                    const contactIndex = this.dataIndex;
         
                     this.inputValue = "";
+
                     setTimeout(() => {
-                    this.contacts[this.dataIndex].messages.push({
+                    this.replyMessage(contactIndex)
+                    }, 3000);
+                    ;
                     
-                        date: '',
-                        text: 'vab',
-                        status: 'received',
-                        
-                    });
-                    }, 1000)
             }else{
                 alert('Il messaggio che stai tentando di inviare non contiente testo! Verrai, pertanto, punito con la morte.')
             }
